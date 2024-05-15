@@ -1,33 +1,119 @@
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import readmore from '../../../public/readmore.jpg'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Login() {
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+// import { useDebounce } from 'usehooks-ts';
+import * as z from "zod";
+
+import signIn from "../firebase/auth/signin"
+
+import readmore from "../../../public/readmore.jpg";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useAuth } from "../context/AuthContext";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
+import { useRouter } from "next/navigation";
+import { signInSchema } from "../schemas/signIn";
+export default function SignIn() {
+  const router = useRouter();
+  const { login, isAuthenticated } = useAuth();
+  const form = useForm<z.infer<typeof signInSchema>>({
+    resolver: zodResolver(signInSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  useEffect(()=>{
+    console.log(isAuthenticated(),"auth")
+    if(isAuthenticated()){
+      router.push("/")
+    }
+  },[isAuthenticated])
+
+  const onSubmit = async (data: z.infer<typeof signInSchema>) => {
+    console.log(data);
+    const { result, error } = await signIn(data.email, data.password);
+    if (error) {
+      return console.log(error)
+  }
+  const accessToken = await result?.user.getIdToken();
+  console.log(result,"csdac")
+  login(accessToken);
+ 
+  
+  };
+
   return (
     <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">
-            <h1 className="text-3xl font-bold">Login</h1>
+            <h1 className="text-3xl font-bold">Signin</h1>
             <p className="text-balance text-muted-foreground">
-              Enter your email below to login to your account
+              Enter your email below to signin to your account
             </p>
           </div>
           <div className="grid gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                required
-              />
-            </div>
-            <div className="grid gap-2">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8"
+              >
+               
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="shadcn" {...field} />
+                      </FormControl>
+                      {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Password</FormLabel>
+                      <FormControl>
+                        <Input placeholder="shadcn" {...field} />
+                      </FormControl>
+                      {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit">Submit</Button>
+              </form>
+            </Form>
+
+            {/* <div className="grid gap-2">
               <div className="flex items-center">
                 <Label htmlFor="password">Password</Label>
                 <Link
@@ -44,12 +130,12 @@ export default function Login() {
             </Button>
             <Button variant="outline" className="w-full">
               Login with Google
-            </Button>
+            </Button> */}
           </div>
           <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{" "}
             <Link href="/signup" className="underline">
-              Sign up
+              Sign Up
             </Link>
           </div>
         </div>
@@ -64,5 +150,5 @@ export default function Login() {
         />
       </div>
     </div>
-  )
+  );
 }

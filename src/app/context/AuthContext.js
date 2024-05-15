@@ -1,38 +1,43 @@
-import React from 'react';
-import {
-    onAuthStateChanged,
-    getAuth,
-} from 'firebase/auth';
-import firebase_app from '../firebase/config';
+'use client'
+// AuthContext.js
+import React, { createContext, useState, useContext } from 'react';
 
-const auth = getAuth(firebase_app);
+const AuthContext = createContext();
 
-export const AuthContext = React.createContext({});
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
 
-export const useAuthContext = () => React.useContext(AuthContext);
+export const AuthProvider = ({ children }) => {
+  const [token, setToken] = useState(null);
+  const [name, setName] = useState(null);
 
-export const AuthContextProvider = ({
-    children,
-}) => {
-    const [user, setUser] = React.useState(null);
-    const [loading, setLoading] = React.useState(true);
+  const login = (data) => {
+    console.log("cjsdcj",data,"authcontext")
+    setToken(data);
+    // setName(data.fullName)
+    // You can also store the token in localStorage or sessionStorage for persistence
+  };
+  const signup = (data) => {
+    console.log("cjsdcj",data,"authcontext")
+    setToken(data);
+    // setName(data.fullName)
+    // You can also store the token in localStorage or sessionStorage for persistence
+  };
 
-    React.useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUser(user);
-            } else {
-                setUser(null);
-            }
-            setLoading(false);
-        });
+  const logout = () => {
+    setToken(null);
+    // Clear token from localStorage or sessionStorage
+  };
 
-        return () => unsubscribe();
-    }, []);
+  const isAuthenticated = () => {
 
-    return (
-        <AuthContext.Provider value={{ user }}>
-            {loading ? <div>Loading...</div> : children}
-        </AuthContext.Provider>
-    );
+    return (!!token);
+  };
+
+  return (
+    <AuthContext.Provider value={{ token,name, login,signup, logout, isAuthenticated }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };

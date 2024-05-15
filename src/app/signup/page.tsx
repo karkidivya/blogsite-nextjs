@@ -10,11 +10,13 @@ import { useForm } from "react-hook-form";
 // import { useDebounce } from 'usehooks-ts';
 import * as z from "zod";
 
+import signUp from "../firebase/auth/signup"
+
 import readmore from "../../../public/readmore.jpg";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
+import { useAuth } from "../context/AuthContext";
 import {
   Form,
   FormControl,
@@ -27,9 +29,10 @@ import {
 
 import { useRouter } from "next/navigation";
 import { signUpSchema } from "../schemas/signup";
+import { access } from "fs";
 export default function Signup() {
   const router = useRouter();
-
+  const { signup, isAuthenticated } = useAuth();
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -39,13 +42,23 @@ export default function Signup() {
     },
   });
 
-  useEffect(() => {
-    
-
-  });
-
+  useEffect(()=>{
+    console.log(isAuthenticated(),"auth")
+    if(isAuthenticated()){
+      router.push("/")
+    }
+  },[isAuthenticated])
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     console.log(data);
+    const { result, error } = await signUp(data.email, data.password);
+    if (error) {
+      return console.log(error)
+  }
+  const accessToken = await result?.user.getIdToken();
+  console.log(accessToken)
+  signup(accessToken);
+  // return router.push("/")
+  
   };
 
   return (
