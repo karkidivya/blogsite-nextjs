@@ -1,0 +1,98 @@
+[
+    {
+        "id" : 1,
+        "title": "10 Tips for Effective Time Management",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum, nisi vitae feugiat lacinia, nulla felis fermentum mauris, nec euismod felis tortor sit amet est. Aliquam sagittis ligula non nisi fermentum, quis accumsan justo vulputate.",
+        "author": "John Doe",
+        "category": "Productivity",
+        "tags": ["time management", "productivity", "tips"],
+        "creationdate": "2024-05-15T12:00:00Z",
+        "comment": [
+            {
+                "userName": "Alice",
+                "comment": "Great tips! I'm going to try implementing them in my daily routine."
+            },
+            {
+                "userName": "Bob",
+                "comment": "Very helpful article, thank you for sharing!"
+            }
+        ],
+        "image": "https://example.com/image1.jpg"
+    },
+    {
+        "id" : 2,
+        "title": "The Benefits of Regular Exercise",
+        "content": "Nulla nec convallis libero. Integer gravida scelerisque eros, vel posuere libero maximus sit amet. Aliquam pretium, justo nec vestibulum fermentum, lacus libero eleifend justo, eget vulputate elit sapien eget risus.",
+        "author": "Jane Smith",
+        "category": "Health",
+        "tags": ["exercise", "health", "wellness"],
+        "creationdate": "2024-05-14T09:30:00Z",
+        "comment": [
+            {
+                "userName": "Charlie",
+                "comment": "I've experienced so many benefits since I started exercising regularly. It really does make a difference!"
+            }
+        ],
+        "image": "https://example.com/image2.jpg"
+    },
+    {
+        "id" : 3,
+        "title": "Exploring New Frontiers in Space Exploration",
+        "content": "Suspendisse potenti. In hac habitasse platea dictumst. Ut vitae elit vel leo consequat interdum. Nulla facilisi. Fusce ut risus et lacus condimentum euismod. Vestibulum vitae quam sed magna tempor tempus.",
+        "author": "Emily Johnson",
+        "category": "Science",
+        "tags": ["space exploration", "science", "technology"],
+        "creationdate": "2024-05-13T15:45:00Z",
+        "comment": [],
+        "image": "https://example.com/image3.jpg"
+    },
+    {
+        "id" : 4,
+        "title": "Delicious and Nutritious Smoothie Recipes",
+        "content": "Vestibulum eget volutpat nunc. Duis vestibulum posuere mi sit amet tempor. Quisque at mi ut odio tristique blandit ut id turpis. In nec sagittis justo, at efficitur felis. Pellentesque scelerisque, risus nec laoreet vestibulum, sapien nulla finibus mauris, id faucibus sapien neque sit amet magna.",
+        "author": "David Brown",
+        "category": "Food",
+        "tags": ["smoothie", "recipes", "nutrition"],
+        "creationdate": "2024-05-12T18:20:00Z",
+        "comment": [
+            {
+                "userName": "Eva",
+                "comment": "These recipes look amazing! Can't wait to try them out."
+            }
+        ],
+        "image": "https://example.com/image4.jpg"
+    },
+    {
+        "id" : 5,
+        "title": "The Importance of Financial Literacy",
+        "content": "Quisque vel metus id mauris placerat posuere. Cras vestibulum orci a sapien pharetra tincidunt. Duis gravida, sapien non maximus mattis, magna ex scelerisque est, eget eleifend arcu magna ac justo.",
+        "author": "Michael Wilson",
+        "category": "Finance",
+        "tags": ["financial literacy", "money management", "education"],
+        "creationdate": "2024-05-11T10:10:00Z",
+        "comment": [],
+        "image": "https://example.com/image5.jpg"
+    },
+    {
+        "id" : 6,
+        "title": "The Importance of Financial Literacy",
+        "content": "Quisque vel metus id mauris placerat posuere. Cras vestibulum orci a sapien pharetra tincidunt. Duis gravida, sapien non maximus mattis, magna ex scelerisque est, eget eleifend arcu magna ac justo.",
+        "author": "Michael Wilson",
+        "category": "Finance",
+        "tags": ["financial literacy", "money management", "education"],
+        "creationdate": "2024-05-11T10:10:00Z",
+        "comment": [],
+        "image": "https://example.com/image5.jpg"
+    },
+    {
+        "id" : 7,
+        "title": "The Importance of Financial Literacy",
+        "content": "Quisque vel metus id mauris placerat posuere. Cras vestibulum orci a sapien pharetra tincidunt. Duis gravida, sapien non maximus mattis, magna ex scelerisque est, eget eleifend arcu magna ac justo.",
+        "author": "Michael Wilson",
+        "category": "Finance",
+        "tags": ["financial literacy", "money management", "education"],
+        "creationdate": "2024-05-11T10:10:00Z",
+        "comment": [],
+        "image": "https://example.com/image5.jpg"
+    }
+]
