@@ -1,6 +1,6 @@
 [
     {
-        "id" : 1,
+        "id" : "1",
         "title": "10 Tips for Effective Time Management",
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum, nisi vitae feugiat lacinia, nulla felis fermentum mauris, nec euismod felis tortor sit amet est. Aliquam sagittis ligula non nisi fermentum, quis accumsan justo vulputate.",
         "author": "John Doe",
@@ -20,7 +20,7 @@
         "image": "https://example.com/image1.jpg"
     },
     {
-        "id" : 2,
+        "id" : "2",
         "title": "The Benefits of Regular Exercise",
         "content": "Nulla nec convallis libero. Integer gravida scelerisque eros, vel posuere libero maximus sit amet. Aliquam pretium, justo nec vestibulum fermentum, lacus libero eleifend justo, eget vulputate elit sapien eget risus.",
         "author": "Jane Smith",
@@ -36,7 +36,7 @@
         "image": "https://example.com/image2.jpg"
     },
     {
-        "id" : 3,
+        "id" : "3",
         "title": "Exploring New Frontiers in Space Exploration",
         "content": "Suspendisse potenti. In hac habitasse platea dictumst. Ut vitae elit vel leo consequat interdum. Nulla facilisi. Fusce ut risus et lacus condimentum euismod. Vestibulum vitae quam sed magna tempor tempus.",
         "author": "Emily Johnson",
@@ -47,7 +47,7 @@
         "image": "https://example.com/image3.jpg"
     },
     {
-        "id" : 4,
+        "id" : "4",
         "title": "Delicious and Nutritious Smoothie Recipes",
         "content": "Vestibulum eget volutpat nunc. Duis vestibulum posuere mi sit amet tempor. Quisque at mi ut odio tristique blandit ut id turpis. In nec sagittis justo, at efficitur felis. Pellentesque scelerisque, risus nec laoreet vestibulum, sapien nulla finibus mauris, id faucibus sapien neque sit amet magna.",
         "author": "David Brown",
@@ -63,7 +63,7 @@
         "image": "https://example.com/image4.jpg"
     },
     {
-        "id" : 5,
+        "id" : "5",
         "title": "The Importance of Financial Literacy",
         "content": "Quisque vel metus id mauris placerat posuere. Cras vestibulum orci a sapien pharetra tincidunt. Duis gravida, sapien non maximus mattis, magna ex scelerisque est, eget eleifend arcu magna ac justo.",
         "author": "Michael Wilson",
@@ -74,7 +74,7 @@
         "image": "https://example.com/image5.jpg"
     },
     {
-        "id" : 6,
+        "id" : "6",
         "title": "The Importance of Financial Literacy",
         "content": "Quisque vel metus id mauris placerat posuere. Cras vestibulum orci a sapien pharetra tincidunt. Duis gravida, sapien non maximus mattis, magna ex scelerisque est, eget eleifend arcu magna ac justo.",
         "author": "Michael Wilson",
@@ -85,7 +85,7 @@
         "image": "https://example.com/image5.jpg"
     },
     {
-        "id" : 7,
+        "id" : "7",
         "title": "The Importance of Financial Literacy",
         "content": "Quisque vel metus id mauris placerat posuere. Cras vestibulum orci a sapien pharetra tincidunt. Duis gravida, sapien non maximus mattis, magna ex scelerisque est, eget eleifend arcu magna ac justo.",
         "author": "Michael Wilson",

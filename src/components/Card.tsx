@@ -19,9 +19,9 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import Image from "next/image"
-
+import { useRouter } from "next/navigation";
 interface BlogPostProps {
-  key : number;
+  id : string;
   title: string;
   content: string;
   author: string;
@@ -31,10 +31,14 @@ interface BlogPostProps {
 
 
 
- const CardWithForm : React.FC<BlogPostProps>  = ({key,  title,image, content, author }) => {
-
+ const CardWithForm : React.FC<BlogPostProps>  = ({id,  title,image, content, author }) => {
+  const router = useRouter();
   const words = content.split(' ');
   const truncatedContent = words.slice(0, 10).join(' ');
+
+  const handleClick = (slug: string) => {
+    router.push(`/blogdesc/${slug}`);
+  };
   return (
     <Card className="w-[350px] mt-5 mx-5" >
     <CardHeader>
@@ -54,7 +58,7 @@ interface BlogPostProps {
     <CardDescription className="mx-5 mb-1">{truncatedContent}</CardDescription>
     <CardFooter className="flex justify-between">
       {/* <Button variant="outline">Cancel</Button> */}
-      <Button>See More</Button>
+      <Button onClick={() => handleClick(id)}>See More</Button>
     </CardFooter>
   </Card>
   )

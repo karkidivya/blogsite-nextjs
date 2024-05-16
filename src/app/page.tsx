@@ -15,7 +15,7 @@ import {
 import React, { useEffect, useState } from "react";
 
 interface Blog {
-  id: number;
+  id: string;
   title: string;
   content: string;
   author: string;
@@ -99,8 +99,9 @@ export default function Home() {
     <main className="flex  items-center justify-center mx-5 mt-5 flex-wrap">
     {
       displayedBlogData.map(blog => (
+        
         <CardWithForm 
-        key={blog.id} 
+        id={blog.id} 
         title={blog.title}
         content={blog.content}
         author={blog.author}
