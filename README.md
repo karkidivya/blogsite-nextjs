@@ -19,7 +19,7 @@ Implemeted with
 
 
 Features
-- signin/signup using firebase 
+- signin/signup using firebase (authenticate users can filter)
 - Home page with blogcard 
 - blog pages
 
