@@ -94,5 +94,16 @@
         "creationdate": "2024-05-11T10:10:00Z",
         "comment": [],
         "image": "https://example.com/image5.jpg"
+    },
+    {
+        "id" : "8",
+        "title": "The Importance of Financial Literacy",
+        "content": "Quisque vel metus id mauris placerat posuere. Cras vestibulum orci a sapien pharetra tincidunt. Duis gravida, sapien non maximus mattis, magna ex scelerisque est, eget eleifend arcu magna ac justo.",
+        "author": "Michael Wilson",
+        "category": "Finance",
+        "tags": ["financial literacy", "money management", "education"],
+        "creationdate": "2024-05-11T10:10:00Z",
+        "comment": [],
+        "image": "https://example.com/image5.jpg"
     }
 ]

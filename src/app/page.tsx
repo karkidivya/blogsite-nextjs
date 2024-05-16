@@ -37,11 +37,11 @@ export default function Home() {
   const { login, isAuthenticated } = useAuth();
   const [selectedValue, setSelectedValue] = useState('');
 
-  // useEffect(() => {
-  //   setBlogData(initialblogData)
-  //   setDisplayedBlogData(initialblogData);
+  useEffect(() => {
+    // setBlogData(initialblogData)
+    setDisplayedBlogData(initialblogData);
     
-  // }, []);
+  }, []);
 
   useEffect(() => {
     // setBlogData(initialblogData)
