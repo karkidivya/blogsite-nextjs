@@ -77,7 +77,7 @@ export default function Home() {
 
   return (
     <>
-    <div>
+    {isAuthenticated() && (<div>
     <Select onValueChange={handleChange} >
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Filter by Category" />
@@ -94,7 +94,8 @@ export default function Home() {
         </SelectGroup>
       </SelectContent>
     </Select>
-    </div>
+    </div>)}
+    
     <div className="flex   items-center">
     <main className="flex  items-center justify-center mx-5 mt-5 flex-wrap">
     {
