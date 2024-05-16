@@ -100,14 +100,15 @@ export default function Home() {
     <main className="flex  items-center justify-center mx-5 mt-5 flex-wrap">
     {
       displayedBlogData.map((blog, i) => (
-        
+        <div key = {i}>
         <CardWithForm 
-        key = {i}
+        
         id={blog.id} 
         title={blog.title}
         content={blog.content}
         author={blog.author}
         image={blog.image}   />
+      </div>
       ))
     }
     {/* <CardWithForm/>
