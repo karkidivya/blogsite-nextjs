@@ -123,7 +123,7 @@ export default function Home() {
           {displayedBlogData.map((blog, i) => (
             
               <CardWithForm
-                key ={blog.id}
+                key ={i}
                 id={blog.id}
                 title={blog.title}
                 content={blog.content}
