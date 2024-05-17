@@ -49,13 +49,14 @@ export default function SignIn() {
 
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
     console.log(data);
-    const { result, error } = await signIn(data.email, data.password);
+    const { result,userName, error } = await signIn(data.email, data.password);
     if (error) {
       return console.log(error)
   }
   const accessToken = await result?.user.getIdToken();
   console.log(result,"csdac")
-  login(accessToken);
+  console.log(userName,"hereherecsdac")
+  login(accessToken, userName);
  
   
   };

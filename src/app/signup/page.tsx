@@ -50,13 +50,13 @@ export default function Signup() {
   },[isAuthenticated])
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     console.log(data);
-    const { result, error } = await signUp(data.email, data.password);
+    const { result, error } = await signUp( data.username, data.email, data.password);
     if (error) {
       return console.log(error)
   }
   const accessToken = await result?.user.getIdToken();
   console.log(accessToken)
-  signup(accessToken);
+  signup(accessToken, data.username);
   // return router.push("/")
   
   };

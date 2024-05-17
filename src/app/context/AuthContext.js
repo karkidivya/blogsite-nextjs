@@ -12,21 +12,24 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [name, setName] = useState(null);
 
-  const login = (data) => {
-    console.log("cjsdcj",data,"authcontext")
+  const login = (data, username) => {
+    console.log("cjsdcj",data,username,"authcontext")
     setToken(data);
+    setName(username)
     // setName(data.fullName)
     // You can also store the token in localStorage or sessionStorage for persistence
   };
-  const signup = (data) => {
+  const signup = (data, username) => {
     console.log("cjsdcj",data,"authcontext")
     setToken(data);
+    setName(username)
     // setName(data.fullName)
     // You can also store the token in localStorage or sessionStorage for persistence
   };
 
   const logout = () => {
     setToken(null);
+    setName(null)
     // Clear token from localStorage or sessionStorage
   };
 

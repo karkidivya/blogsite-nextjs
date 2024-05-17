@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import React, { useEffect, useState } from "react";
+import welcome from '../../public/welcome.jpg'
 
 interface Blog {
   id: string;
@@ -77,8 +78,8 @@ export default function Home() {
 
   return (
     <>
-    {isAuthenticated() && (<div>
-    <Select onValueChange={handleChange} >
+    {isAuthenticated() && (<div className="flex justify-left items-center bg-slate-200"><div className=" ml-20 my-3">
+    <Select onValueChange={handleChange}  >
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Filter by Category" />
       </SelectTrigger>
@@ -94,8 +95,21 @@ export default function Home() {
         </SelectGroup>
       </SelectContent>
     </Select>
-    </div>)}
-    
+    </div></div>)}
+    <div className="flex justify-center ">
+            <Image
+              src={
+                welcome
+              }
+              width={600}
+              height={300}
+              alt="alternate image"
+            />
+          </div>
+    <div className="flex justify-center py-5">
+    <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-4xl">
+      Our featured blogs
+    </h1></div>
     <div className="flex   items-center">
     <main className="flex  items-center justify-center mx-5 mt-5 flex-wrap">
     {displayedBlogData.map((blog, i) => (
