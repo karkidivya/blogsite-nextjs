@@ -121,18 +121,16 @@ export default function Home() {
       <div className="flex   items-center">
         <main className="flex  items-center justify-center mx-5 mt-5 flex-wrap">
           {displayedBlogData.map((blog, i) => (
-            <div key={i}>
-              {" "}
-              {/* Added key prop */}
+            
               <CardWithForm
-                key ={i}
+                key ={blog.id}
                 id={blog.id}
                 title={blog.title}
                 content={blog.content}
                 author={blog.author}
                 image={blog.image}
               />
-            </div>
+           
           ))}
           
         </main>
